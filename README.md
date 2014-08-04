@@ -77,6 +77,29 @@ based on routes like so:
 `NewRelic.ignoreRoutes` uses the Routing system, so use them as you would connecting
 a route in your `routes.php` file.
 
+### Real User Monitoring (RUM)
+
+If you want to use New Relic's RUM, there's a little helper that let's you do that.
+Add the helper to your controller:
+
+    public $helpers = array(
+        'NewRelic.NewRelic'
+    );
+
+Then add the following to your layout:
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+      <?php echo $this->NewRelic->start(); ?>
+      ...
+      </head>
+      <body>
+      ...
+      <?php echo $this->NewRelic->end(); ?>
+      </body>
+    </html>
+
 ## License
 
 Copyright (c) Jeremy Harris
