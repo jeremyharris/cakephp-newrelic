@@ -10,7 +10,7 @@ This plugin organizes them using basic routes, that is, a transaction for:
 
 is placed in the following New Relic transaction:
 
-   /posts/edit
+    /posts/edit
 
 This allows you to dig down into issues regarding certain actions, rather than
 based on filenames. To aggregate based on action, parameters are also ignored.
