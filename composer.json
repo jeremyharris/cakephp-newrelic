@@ -1,0 +1,21 @@
+{
+    "name": "jeremyharris/cakephp-newrelic",
+    "type": "cakephp-plugin",
+    "description": "New Relic is a plugin for CakePHP that makes transactions more useful",
+    "keywords": [
+        "cakephp", "plugin", "route", "new relic"
+    ],
+    "homepage": "https://github.com/jeremyharris/cakephp-newrelic",
+    "authors": [
+        {
+            "name": "Jeremy Harris",
+            "email": "jeremy@someguyjeremy.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "*"
+    },
+	"extra": {
+        "installer-name": "NewRelic"
+    }
+}
