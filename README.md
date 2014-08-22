@@ -1,3 +1,6 @@
+[![build
+status](https://travis-ci.org/jeremyharris/cakephp-newrelic.svg?branch=master)](https://travis-ci.org/jeremyharris/cakephp-newrelic)
+
 # CakePHP New Relic Plugin
 
 The New Relic plugin is a CakePHP plugin that makes your [New Relic]
