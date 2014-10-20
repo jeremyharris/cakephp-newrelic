@@ -31,7 +31,7 @@ class NewRelicHelper extends AppHelper {
 /**
  * Checks for new relic extension
  *
- * @return boolean
+ * @return bool
  */
 	public function hasNewRelic() {
 		return extension_loaded('newrelic');

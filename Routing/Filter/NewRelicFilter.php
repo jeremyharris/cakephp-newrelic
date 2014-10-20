@@ -10,17 +10,17 @@ class NewRelicFilter extends DispatcherFilter {
  * @param CakeEvent $event Dispatch event
  * @return true
  */
-    public function beforeDispatch(CakeEvent $event) {
-        $request = $event->data['request'];
-        $response = $event->data['response'];
+	public function beforeDispatch(CakeEvent $event) {
+		$request = $event->data['request'];
+		$response = $event->data['response'];
 
 		if (!$this->hasNewRelic()) {
 			return true;
 		}
 
 		$ignored = Configure::read('NewRelic.ignoreRoutes');
-		$url = '/'.$event->data['request']->url;
-        if (!empty($ignored)) {
+		$url = '/' . $event->data['request']->url;
+		if (!empty($ignored)) {
 			foreach ($ignored as $ignoreTest) {
 				$cakeRoute = new CakeRoute($ignoreTest);
 				if ($cakeRoute->parse($url) !== false) {
@@ -31,15 +31,15 @@ class NewRelicFilter extends DispatcherFilter {
 
 		}
 
-		$this->nameTransaction($request->controller.'/'.$request->action);
+		$this->nameTransaction($request->controller . '/' . $request->action);
 
 		return true;
-    }
+	}
 
 /**
  * Ignores the current transaction
  *
- * @return boolean
+ * @return bool
  */
 	public function ignoreTransaction() {
 		return newrelic_ignore_transaction();
@@ -49,7 +49,7 @@ class NewRelicFilter extends DispatcherFilter {
  * Renames the transaction
  *
  * @param string $name Transaction name
- * @return boolean
+ * @return bool
  */
 	public function nameTransaction($name) {
 		return newrelic_name_transaction($name);
@@ -58,9 +58,10 @@ class NewRelicFilter extends DispatcherFilter {
 /**
  * Checks for new relic extension
  *
- * @return boolean
+ * @return bool
  */
 	public function hasNewRelic() {
 		return extension_loaded('newrelic');
 	}
+
 }
