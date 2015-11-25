@@ -72,6 +72,7 @@ class NewRelicFilter extends DispatcherFilter {
 /**
  * Set NewRelic AppName
  *
+ * @param string $name Application name
  * @return boolean
  */
     public function setAppName($name) {
