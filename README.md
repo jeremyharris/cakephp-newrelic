@@ -65,7 +65,7 @@ Add the following filter to your Dispatch filters (in `bootstrap.php):
 
 Transactions will now be named by basic routes, that is, `:controller/:action`.
 
-## Change the application name
+### Change the application name
 
 Add the application name (in `bootstrap.php):
 
