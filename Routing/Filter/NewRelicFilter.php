@@ -18,6 +18,12 @@ class NewRelicFilter extends DispatcherFilter {
 			return true;
 		}
 
+		// Set NewRelic appName
+		$appName = Configure::read('NewRelic.appName');
+		if( ! empty($appName)) {
+			$this->setAppName($appName);
+		}
+
 		$ignored = Configure::read('NewRelic.ignoreRoutes');
 		$url = '/' . $event->data['request']->url;
 		if (!empty($ignored)) {
@@ -63,5 +69,14 @@ class NewRelicFilter extends DispatcherFilter {
 	public function hasNewRelic() {
 		return extension_loaded('newrelic');
 	}
+/**
+ * Set NewRelic AppName
+ *
+ * @param string $name Application name
+ * @return boolean
+ */
+    public function setAppName($name) {
+        return newrelic_set_appname($name);
+    }
 
 }
